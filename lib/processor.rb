@@ -33,7 +33,7 @@ class Processor
     hovers.each_slice(2) do |initial_position, instructions|
       x_coord, y_coord, direction = initial_position.split(" ")
       hover = Hover.new(x_coord, y_coord, direction)
-      hover.move(instructions)
+      hover.move(instructions, @plateau)
       @plateau.hovers << hover
     end
   end

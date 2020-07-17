@@ -22,3 +22,13 @@ Execute this command from project root folder
 ```
 ruby -Itest test/run_all.rb
 ```
+
+### Other functions
+I made some assumptions over the scenario
+1. Hover movement must be stopped if next instruction send the hover to an used tile - a warn must be returned
+2. If instructions send the hover to outside of the plateau boundaries, a warn must be returned indicating that
+
+The unit test cover these assumptions. In order to run the code and see this results, use the 'out_boundary_collision.txt' file
+```
+ruby runner.rb out_boundary_collision.txt
+```
