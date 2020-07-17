@@ -1,5 +1,3 @@
-require 'byebug'
-
 class Hover
   attr_accessor :x_coord, :y_coord, :direction
 

@@ -1,7 +1,6 @@
 require_relative 'plateau.rb'
 require_relative 'hover.rb'
 
-require 'byebug'
 class Processor
 
   attr_accessor :file, :plateau
