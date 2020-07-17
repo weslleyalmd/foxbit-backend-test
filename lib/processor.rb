@@ -4,12 +4,11 @@ require_relative 'hover.rb'
 require 'byebug'
 class Processor
 
-  attr_accessor :file, :plateau, :hovers
+  attr_accessor :file, :plateau
 
   def initialize(file_path)
     @file = read(file_path)
     @plateau = nil
-    @hovers = []
   end
 
   def run
@@ -28,7 +27,7 @@ class Processor
   private
 
   def print_hovers_positions
-    @hovers.map {|h| h.current_position}
+    @plateau.hovers.map {|h| h.current_position}
   end
 
   def move_hovers(hovers)
@@ -36,7 +35,7 @@ class Processor
       x_coord, y_coord, direction = initial_position.split(" ")
       hover = Hover.new(x_coord, y_coord, direction)
       hover.move(instructions)
-      @hovers << hover
+      @plateau.hovers << hover
     end
   end
 

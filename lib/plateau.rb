@@ -1,14 +1,16 @@
 class Plateau
 
-  attr_accessor :final_boundary_x, :final_boundary_y, :initial_boundary_x, :initial_boundary_y
+  attr_accessor :hovers ,:final_boundary_x, :final_boundary_y, :initial_boundary_x, :initial_boundary_y
 
   def initialize(f_boundary_x, f_boundary_y)
-    @final_boundary_x = f_boundary_x
-    @final_boundary_y = f_boundary_y
+    @final_boundary_x = f_boundary_x.to_i
+    @final_boundary_y = f_boundary_y.to_i
 
     # Always starts at "0,0"
     @initial_boundary_x = 0
     @initial_boundary_y = 0
+
+    @hovers = []
   end
 
 end

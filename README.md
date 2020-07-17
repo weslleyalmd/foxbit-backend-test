@@ -10,3 +10,15 @@ The first line of input is the upper-right coordinates of the plateau, the lower
 
 ### Output
 The output for each rover should be its final co-ordinates and heading.
+
+### How to run
+Execute this command from project root folder
+```
+ruby runner.rb path_to_instructions_file.txt
+```
+
+### How to run tests
+Execute this command from project root folder
+```
+ruby -Itest test/run_all.rb
+```
