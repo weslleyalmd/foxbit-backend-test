@@ -29,29 +29,27 @@ class Hover
       end
 
       if instruction == "M"
-
+        # GET type and axis_to_move based on current direction
         type = DIRECTIONS[@direction.to_sym][:type]
         axis_to_move = DIRECTIONS[@direction.to_sym][:axis_to_move]
         
-        if type == "add"
-          if axis_to_move == "x"
-            @x_coord += 1
-          elsif axis_to_move == "y"
-            @y_coord += 1
-          end              
-        end
-
-        if type == "subtract"
-          if axis_to_move == "x"
-            @x_coord -= 1
-          elsif axis_to_move == "y"
-            @y_coord -= 1
-          end
-        end
-
+        move_on_x(type) if axis_to_move == "x"
+        move_on_y(type) if axis_to_move == "y"
       end
 
     end
+  end
+
+  private
+
+  def move_on_x(type)
+    @x_coord += 1 if type == "add"
+    @x_coord -= 1 if type == "subtract"
+  end
+
+  def move_on_y(type)
+    @y_coord += 1 if type == "add"
+    @y_coord -= 1 if type == "subtract"
   end
 
 end
