@@ -1,7 +1,7 @@
 class Hover
-  attr_reader :x_coord, :y_coord, :direction
+  attr_accessor :x_coord, :y_coord, :direction
 
-  def initializer(x_coord, y_coord, direction)
+  def initialize(x_coord, y_coord, direction)
     @x_coord = x_coord
     @y_coord = y_coord
     @direction = direction
@@ -10,5 +10,10 @@ class Hover
   def current_position
     "#{x_coord} #{y_coord} #{direction}"
   end
+
+  def move(instructions)
+    instructions.each_char do |i|
+    end
+  end 
 
 end
